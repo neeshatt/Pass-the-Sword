@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bc21qtosopstf"]
+
+[ext_resource type="Script" path="res://Exit/exit.gd" id="1_t16xn"]
+[ext_resource type="Texture2D" uid="uid://m7ffqgfjas4u" path="res://Exit/exit.png" id="1_xl2gp"]
+[ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="2_axoth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3owfg"]
+size = Vector2(846, 754)
+
+[node name="Exit" type="Area2D"]
+script = ExtResource("1_t16xn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -20)
+shape = SubResource("RectangleShape2D_3owfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xl2gp")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
+texture = ExtResource("2_axoth")
+texture_scale = 2.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

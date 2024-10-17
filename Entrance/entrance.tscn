@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpf1274qew8c8"]
+
+[ext_resource type="Script" path="res://Entrance/entrance.gd" id="1_61jkn"]
+[ext_resource type="Texture2D" uid="uid://3onauvrkrwpd" path="res://Entrance/entrance.png" id="2_1pkkm"]
+[ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="3_ogslq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xmje"]
+size = Vector2(849, 784)
+
+[node name="Entrance" type="Area2D"]
+script = ExtResource("1_61jkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(14.5, -27)
+shape = SubResource("RectangleShape2D_5xmje")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1pkkm")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
+texture = ExtResource("3_ogslq")
+texture_scale = 1.5
