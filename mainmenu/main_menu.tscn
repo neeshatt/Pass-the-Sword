@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blvpr2ymp4t2t" path="res://mainmenu/bg.png" id="1_ihacc"]
 [ext_resource type="Script" path="res://mainmenu/main_menu.gd" id="1_nr0gt"]
 [ext_resource type="PackedScene" uid="uid://cs18t35rny6vt" path="res://mainmenu/options_menu/option_menu.tscn" id="3_mwhwl"]
-[ext_resource type="AudioStream" path="res://Items/audio/menu.ogg" id="4_ps1rd"]
+[ext_resource type="AudioStream" uid="uid://crgdib7ffmqt1" path="res://Items2/audio/menu.ogg" id="4_rxydo"]
 
 [sub_resource type="SystemFont" id="SystemFont_0rs65"]
 font_names = PackedStringArray("Impact")
@@ -103,7 +103,7 @@ visible = false
 layout_mode = 1
 
 [node name="MusicStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_ps1rd")
+stream = ExtResource("4_rxydo")
 volume_db = -10.0
 autoplay = true
 bus = &"Music"

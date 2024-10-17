@@ -47,10 +47,6 @@ func _process(delta: float) -> void:
 				inventory_ui.close()
 			else:
 				inventory_ui.open()
-				
-func collect(item):
-	inventory.insert(item)
-
 
 func _physics_process(delta: float) -> void:
 	if current_state == State.Dead:
@@ -127,3 +123,6 @@ func activate_camera():
 
 func deactivate_camera():
 	is_selected = false
+	
+func collect(item):
+	inventory.insert(item)
