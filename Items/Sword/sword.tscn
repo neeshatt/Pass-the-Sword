@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://b02g5mj7sv64v"]
+
+[ext_resource type="Script" path="res://Items/Sword/sword.gd" id="1_ujslx"]
+[ext_resource type="Texture2D" uid="uid://dv5qld2bo76vb" path="res://Items/Sword/Sword.png" id="2_vl3cs"]
+[ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="3_orxyh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2w524"]
+radius = 22.4103
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsjop"]
+atlas = ExtResource("2_vl3cs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn252"]
+atlas = ExtResource("2_vl3cs")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xibg8"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsjop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn252")
+}],
+"loop": true,
+"name": &"sword_animation",
+"speed": 3.0
+}]
+
+[node name="Sword" type="Area2D"]
+scale = Vector2(3, 3)
+collision_mask = 2
+script = ExtResource("1_ujslx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2w524")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xibg8")
+animation = &"sword_animation"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.170336, 0.271602, 0.832403, 1)
+energy = 2.0
+texture = ExtResource("3_orxyh")
+texture_scale = 0.2

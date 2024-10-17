@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://xmbb6ox2ci3a"]
+
+[ext_resource type="Script" path="res://Obstacles/ColoredGate/colored_gate.gd" id="1_qrxsm"]
+[ext_resource type="Texture2D" uid="uid://d0rmlhncp35r1" path="res://Obstacles/ColoredGate/colored_gate.png" id="2_hoxq0"]
+[ext_resource type="Script" path="res://Obstacles/ColoredGate/colored_gate_area_2d.gd" id="3_gj5vy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w706v"]
+size = Vector2(42, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yh1fp"]
+size = Vector2(42.5, 45.5)
+
+[node name="ColoredGate" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_qrxsm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hoxq0")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("3_gj5vy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-12, -7)
+shape = SubResource("RectangleShape2D_w706v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-12.75, -7.75)
+shape = SubResource("RectangleShape2D_yh1fp")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="gate_reached" from="Area2D" to="." method="_on_area_2d_gate_reached"]
+[connection signal="red_saber_at_gate" from="Area2D" to="." method="_on_area_2d_red_saber_at_gate"]

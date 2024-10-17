@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cs54lhajm3jkd"]
+
+[ext_resource type="Script" path="res://Obstacles/PoisonousWeeds/poisonous_weeds.gd" id="1_duvie"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugr4k"]
+
+[node name="poisonous_weeds" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_duvie")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ugr4k")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

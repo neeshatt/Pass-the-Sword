@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ber042uxxhi2p"]
+
+[ext_resource type="Script" path="res://Obstacles/TeleportationArea/teleportation_area.gd" id="1_0hx4w"]
+[ext_resource type="Texture2D" uid="uid://bo1cl2hovdun3" path="res://Obstacles/TeleportationArea/teleport.png" id="2_cg6oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c2onh"]
+size = Vector2(455, 227)
+
+[node name="TeleportationArea" type="Area2D"]
+script = ExtResource("1_0hx4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.5, -2.5)
+shape = SubResource("RectangleShape2D_c2onh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_cg6oy")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
