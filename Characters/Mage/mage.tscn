@@ -1,7 +1,8 @@
-[gd_scene load_steps=60 format=3 uid="uid://ct5ixnft7ya32"]
+[gd_scene load_steps=62 format=3 uid="uid://ct5ixnft7ya32"]
 
 [ext_resource type="Script" path="res://Characters/Mage/mage.gd" id="1_rdhmp"]
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="2_8aad5"]
+[ext_resource type="Resource" uid="uid://5ake6x1d16c0" path="res://Inventory/mage_inv.tres" id="2_yl22m"]
 [ext_resource type="Texture2D" uid="uid://cjx2ypqe27o25" path="res://Characters/Mage/SpriteSheet/down.png" id="3_xvkhp"]
 [ext_resource type="Texture2D" uid="uid://b7h6uotle3svd" path="res://Characters/Mage/SpriteSheet/idle.png" id="4_c1t5j"]
 [ext_resource type="Texture2D" uid="uid://dyg8f12toirxj" path="res://Characters/Mage/SpriteSheet/left.png" id="5_5ned1"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cb2s16we4jmql" path="res://Characters/Mage/SpriteSheet/up.png" id="7_yk4dq"]
 [ext_resource type="Script" path="res://Characters/Mage/mage_area_2d.gd" id="8_k40se"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="9_3a6j2"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="10_if6xn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7pr0v"]
 radius = 22.0
@@ -389,6 +391,7 @@ height = 72.0
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_rdhmp")
+inventory = ExtResource("2_yl22m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7pr0v")
@@ -416,3 +419,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("10_if6xn")]
+offset_left = -118.0
+offset_top = -257.0
+offset_right = 117.0
+offset_bottom = -42.0

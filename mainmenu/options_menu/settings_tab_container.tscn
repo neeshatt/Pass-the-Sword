@@ -1,0 +1,172 @@
+[gd_scene load_steps=6 format=3 uid="uid://v2yw0yjdxvdg"]
+
+[ext_resource type="PackedScene" uid="uid://c45547oelsgwd" path="res://mainmenu/options_menu/audio_slider_settings.tscn" id="1_316ih"]
+[ext_resource type="PackedScene" uid="uid://ccxe0uftu7r0s" path="res://mainmenu/options_menu/keys.tscn" id="2_5enmu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h5wjb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7o8hg"]
+
+[sub_resource type="SystemFont" id="SystemFont_7x4hp"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[node name="Settings_Tab_Container" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = 50.0
+offset_right = -100.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Volume" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Volume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Volume/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Volume/MarginContainer/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 120
+
+[node name="Audio_slider_settings" parent="TabContainer/Volume/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_316ih")]
+layout_mode = 2
+
+[node name="Audio_slider_settings2" parent="TabContainer/Volume/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_316ih")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="Audio_slider_settings3" parent="TabContainer/Volume/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_316ih")]
+layout_mode = 2
+bus_name = "Sfx"
+
+[node name="Controls" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Controls"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Controls/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h5wjb")
+
+[node name="Keys" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_5enmu")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 32
+theme_override_styles/separator = SubResource("StyleBoxEmpty_7o8hg")
+
+[node name="Instructions" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Instructions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Instructions/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Instructions/MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TabContainer/Instructions/MarginContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(830, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("SystemFont_7x4hp")
+theme_override_font_sizes/font_size = 20
+text = "Objective
+
+Your mission is to guide a team of 7 brave heroes through a dangerous maze filled with surprises. The ultimate goal is to lead at least one hero to the other side of the maze while overcoming unexpected obstacles and collecting valuable items along the way.
+
+Starting the Game
+
+Team of Heroes: You will begin with 7 unique characters, each a hero with their own strengths. These heroes will be your companions as you navigate the maze. Remember, some challenges may require a hero's sacrifice for the greater good, so choose wisely.
+
+Maze Entrances: There are 3 different entrances to the maze. At the beginning of the game, you must select one of these entrances to start your journey. The obstacles and paths you encounter may differ based on the entrance you choose.
+
+Maze Navigation
+Movement: Control your heroes to explore the maze. Each section of the maze presents a new set of challenges and mysteries to uncover.
+
+Surprise Obstacles: Throughout the maze, you will encounter obstacles, each designed to test your strategic thinking and courage. The obstacles are hidden and revealed only when encountered, making every step unpredictable. Examples of potential obstacles include:
+
+Traps: Hidden mechanisms that could injure or hinder your heroes.
+Poisonous Ground: Dangerous areas that can cause harm if stepped on.
+Sacrificial Challenges: Some obstacles require you to sacrifice a hero in order to proceed. These sacrifices are essential to your survival and success.
+Hero Sacrifice: Some challenges in the maze can only be overcome by sacrificing one of your heroes. Sacrificed heroes cannot be revived, so consider your decisions carefully.
+
+Collectibles
+As you progress through the maze, you will find various collectibles scattered throughout. Collect these items to gain advantages that will help you reach the other side, such as:
+Keys: Unlock secret passages or doors.
+Swords:Weed out obstacles
+Collecting these items can be the difference between life and death for your heroes, so keep an eye out for them!
+
+Winning the Game
+The game is won when at least one of your heroes successfully reaches the other side of the maze. Keep in mind that it’s not necessary for all 7 heroes to survive, but managing your team and making wise sacrifices is key to success.
+Game Tips
+Plan Ahead: Study each section of the maze carefully before proceeding. Sometimes the best strategy is patience and observation.
+Sacrifice Wisely: Not every hero needs to survive for you to win, but a poorly-timed sacrifice may make later stages harder.
+Explore Thoroughly: Collectibles are crucial to your success, so search every corner of the maze for hidden items.
+Adapt: With surprise obstacles, no two playthroughs will be the same. Stay flexible in your strategies and adapt to the challenges you face.
+
+Good Luck, Hero!"
+autowrap_mode = 2

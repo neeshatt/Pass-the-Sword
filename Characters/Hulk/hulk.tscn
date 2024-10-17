@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=3 uid="uid://cldjy1lch41vk"]
+[gd_scene load_steps=62 format=3 uid="uid://cldjy1lch41vk"]
 
 [ext_resource type="Script" path="res://Characters/Hulk/hulk.gd" id="1_dk01d"]
+[ext_resource type="Resource" uid="uid://fk577g8nrl0e" path="res://Inventory/hulk_inv.tres" id="2_6rxxv"]
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="2_s4xum"]
 [ext_resource type="Texture2D" uid="uid://kqrb31lcoptj" path="res://Characters/Hulk/SpriteSheet/Down.png" id="3_ljcak"]
 [ext_resource type="Texture2D" uid="uid://k4xgu4ipo0gt" path="res://Characters/Hulk/SpriteSheet/idle.png" id="4_sdgcx"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://p1yg545ytiah" path="res://Characters/Hulk/SpriteSheet/up.png" id="7_shh6u"]
 [ext_resource type="Script" path="res://Characters/Hulk/hulk_area_2d.gd" id="8_dl20j"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="9_68ov3"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="10_fb1o0"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nn3if"]
 
@@ -385,6 +387,7 @@ animations = [{
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_dk01d")
+inventory = ExtResource("2_6rxxv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_nn3if")
@@ -412,3 +415,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("10_fb1o0")]
+offset_left = -118.0
+offset_top = -233.0
+offset_right = 117.0
+offset_bottom = -18.0

@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=3 uid="uid://bds25y4t3rdns"]
+
+[ext_resource type="Script" path="res://Inventory/inventory_ui.gd" id="1_duq72"]
+[ext_resource type="Texture2D" uid="uid://bntwheoxcaok4" path="res://Inventory/inventory-background.png" id="2_ro5fy"]
+[ext_resource type="PackedScene" uid="uid://bdh4j2hyt2e6c" path="res://Inventory/slot.tscn" id="3_mycbw"]
+
+[node name="InventoryUI" type="Control"]
+custom_minimum_size = Vector2(82, 67)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 235.0
+offset_bottom = 215.0
+script = ExtResource("1_duq72")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_right = 236.0
+offset_bottom = 215.0
+texture = ExtResource("2_ro5fy")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2
+
+[node name="slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_mycbw")]
+layout_mode = 2

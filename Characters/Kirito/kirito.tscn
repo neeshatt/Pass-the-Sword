@@ -1,13 +1,15 @@
-[gd_scene load_steps=50 format=3 uid="uid://cwv8y4rfms05d"]
+[gd_scene load_steps=52 format=3 uid="uid://cwv8y4rfms05d"]
 
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="1_d8xwi"]
 [ext_resource type="Script" path="res://Characters/Kirito/kirito.gd" id="1_k3b7k"]
+[ext_resource type="Resource" uid="uid://dec6n2p65nij2" path="res://Inventory/kirito_inv.tres" id="2_7a2tn"]
 [ext_resource type="Texture2D" uid="uid://bx8nv2rpfelcs" path="res://Characters/Kirito/SpriteSheet/idle.png" id="2_mret0"]
 [ext_resource type="Texture2D" uid="uid://5kqjgaxpugic" path="res://Characters/Kirito/SpriteSheet/left.png" id="3_4qfm4"]
 [ext_resource type="Texture2D" uid="uid://bpwootnhdbrk6" path="res://Characters/Kirito/SpriteSheet/right.png" id="4_w4xdo"]
 [ext_resource type="Texture2D" uid="uid://tkfq6bnvp38" path="res://Characters/Kirito/SpriteSheet/up.png" id="5_nkuem"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="6_po2w6"]
 [ext_resource type="Script" path="res://Characters/Kirito/kirito_area_2d.gd" id="7_t31uw"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="9_044d3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qm6yx"]
 radius = 13.0
@@ -325,6 +327,7 @@ height = 58.0
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_k3b7k")
+inventory = ExtResource("2_7a2tn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qm6yx")
@@ -352,3 +355,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("9_044d3")]
+offset_left = -117.0
+offset_top = -246.0
+offset_right = 118.0
+offset_bottom = -31.0

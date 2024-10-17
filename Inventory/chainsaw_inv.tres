@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="Inv" load_steps=12 format=3 uid="uid://b5in4hdt3usad"]
+
+[ext_resource type="Script" path="res://Inventory/inventory.gd" id="1_nuqts"]
+[ext_resource type="Script" path="res://Inventory/Inv_slot.gd" id="2_negdb"]
+
+[sub_resource type="Resource" id="Resource_y41o5"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_7g26r"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_dsuxt"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_wafei"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_3veap"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_4cckv"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_uedax"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_6gwc3"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[sub_resource type="Resource" id="Resource_4mmy1"]
+script = ExtResource("2_negdb")
+amount = 0
+
+[resource]
+script = ExtResource("1_nuqts")
+slots = Array[ExtResource("2_negdb")]([SubResource("Resource_y41o5"), SubResource("Resource_7g26r"), SubResource("Resource_dsuxt"), SubResource("Resource_wafei"), SubResource("Resource_3veap"), SubResource("Resource_4cckv"), SubResource("Resource_uedax"), SubResource("Resource_6gwc3"), SubResource("Resource_4mmy1")])

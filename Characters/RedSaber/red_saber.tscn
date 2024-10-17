@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://do5tw53lori6t"]
+[gd_scene load_steps=51 format=3 uid="uid://do5tw53lori6t"]
 
 [ext_resource type="Script" path="res://Characters/RedSaber/red_saber.gd" id="1_6jrde"]
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="2_84mje"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bu4jpx18r6nkn" path="res://Characters/RedSaber/SpriteSheet/up.png" id="6_aq7et"]
 [ext_resource type="Script" path="res://Characters/RedSaber/red_saber_area_2d.gd" id="7_ddq16"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="8_hs7x3"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="9_1m0uq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a4ncm"]
 radius = 15.0
@@ -352,3 +353,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("9_1m0uq")]
+offset_left = -117.0
+offset_top = -245.0
+offset_right = 118.0
+offset_bottom = -30.0

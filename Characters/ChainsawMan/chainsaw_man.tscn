@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=3 uid="uid://bgey40vdkmn3w"]
+[gd_scene load_steps=62 format=3 uid="uid://bgey40vdkmn3w"]
 
 [ext_resource type="Script" path="res://Characters/ChainsawMan/chainsaw_man.gd" id="1_lhbao"]
+[ext_resource type="Resource" uid="uid://b5in4hdt3usad" path="res://Inventory/chainsaw_inv.tres" id="2_td86o"]
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="2_ywyxi"]
 [ext_resource type="Texture2D" uid="uid://cagocdew40ui6" path="res://Characters/ChainsawMan/SpriteSheet/down.png" id="3_8vben"]
 [ext_resource type="Texture2D" uid="uid://bbpf6t2a4qltk" path="res://Characters/ChainsawMan/SpriteSheet/Idle.png" id="4_0uinr"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://buym27vi27xm5" path="res://Characters/ChainsawMan/SpriteSheet/up.png" id="7_c1hgi"]
 [ext_resource type="Script" path="res://Characters/ChainsawMan/chainsaw_man_area_2d.gd" id="8_l6bgu"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="9_ucsds"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="10_3wy3e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6d67c"]
 radius = 17.0
@@ -389,6 +391,7 @@ height = 52.0
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_lhbao")
+inventory = ExtResource("2_td86o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6d67c")
@@ -416,3 +419,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("10_3wy3e")]
+offset_left = -116.0
+offset_top = -247.0
+offset_right = 119.0
+offset_bottom = -32.0

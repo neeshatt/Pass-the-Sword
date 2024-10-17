@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var character_camera: Camera2D = $Camera2D
+@onready var inventory_ui: Control = $InventoryUI
+@onready var torch = preload("res://Inventory/items/torch.tres")
 
 @export var speed : int = 500
 @export var max_horizontal_speed : int = 300
@@ -14,12 +16,40 @@ var is_selected = false
 var frozen = false
 var is_alive
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+@export var inventory : Inv
+func _ready():
+	# Create new inventory for this character
+	inventory = Inv.new()
+	inventory.slots = []
+	for i in range(9):
+		var slot = InvSlot.new()
+		slot.item = null
+		slot.amount = 0
+		inventory.slots.append(slot)
+		
+	inventory.insert(torch)
+	
+	# Setup inventory UI
+	if inventory_ui:
+		inventory_ui.set_character_inventory(inventory)
+		inventory_ui.close()  # Start with inventory closed
+	
 	is_alive = true
 	current_state = State.Idle
 	set_process_input(true)
 	add_to_group("characters")
+	
+func _process(delta: float) -> void:
+	# Only process inventory input if this character is selected
+	if is_selected and Input.is_action_just_pressed("open_inventory"):
+		if inventory_ui:
+			if inventory_ui.is_open:
+				inventory_ui.close()
+			else:
+				inventory_ui.open()
+				
+func collect(item):
+	inventory.insert(item)
 
 
 func _physics_process(delta: float) -> void:

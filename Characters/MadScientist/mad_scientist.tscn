@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=3 uid="uid://8xqiyyewfjgd"]
+[gd_scene load_steps=62 format=3 uid="uid://8xqiyyewfjgd"]
 
 [ext_resource type="Script" path="res://Characters/MadScientist/mad_scientist.gd" id="1_wcl11"]
+[ext_resource type="Resource" uid="uid://cg3vb7qt4nss5" path="res://Inventory/scientist_inv.tres" id="2_taxh7"]
 [ext_resource type="Texture2D" uid="uid://c7p7vh7c54dsp" path="res://Death/death.png" id="2_ys5uh"]
 [ext_resource type="Texture2D" uid="uid://busc2s8dvd3yk" path="res://Characters/MadScientist/SpriteSheet/down.png" id="3_st0n4"]
 [ext_resource type="Texture2D" uid="uid://ckvreyg4sqo3g" path="res://Characters/MadScientist/SpriteSheet/idle.png" id="4_g6dsb"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://caf8k4vvbbt7y" path="res://Characters/MadScientist/SpriteSheet/up.png" id="7_fwxla"]
 [ext_resource type="Script" path="res://Characters/MadScientist/mad_scientist_area_2d.gd" id="8_3myb0"]
 [ext_resource type="Texture2D" uid="uid://x57678u75cgh" path="res://Light/light.png" id="9_fytck"]
+[ext_resource type="PackedScene" uid="uid://bds25y4t3rdns" path="res://Inventory/inventory_ui.tscn" id="10_nnur7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xr61y"]
 radius = 20.0
@@ -389,6 +391,7 @@ height = 54.0
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_wcl11")
+inventory = ExtResource("2_taxh7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xr61y")
@@ -414,3 +417,9 @@ limit_left = 500
 limit_top = -8000
 limit_right = 7500
 limit_bottom = 0
+
+[node name="InventoryUI" parent="." instance=ExtResource("10_nnur7")]
+offset_left = -116.0
+offset_top = -246.0
+offset_right = 119.0
+offset_bottom = -31.0

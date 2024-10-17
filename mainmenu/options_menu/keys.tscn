@@ -1,0 +1,186 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccxe0uftu7r0s"]
+
+[sub_resource type="SystemFont" id="SystemFont_vj3bb"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_67bv8"]
+font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
+
+[node name="Keys" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Move Up"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "W or Up_Arrow"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Move Down"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "S or Down_Arrow"
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Left"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "A or Left_Arrow"
+vertical_alignment = 1
+
+[node name="VSeparator3" type="VSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Right"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "D or Right_Arrow"
+vertical_alignment = 1
+
+[node name="VSeparator4" type="VSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer5"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Zoom In/Out"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "Mouse Scroll"
+vertical_alignment = 1
+
+[node name="VSeparator5" type="VSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="move up" type="Label" parent="VBoxContainer/HBoxContainer6"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_vj3bb")
+theme_override_font_sizes/font_size = 40
+text = "Toggle inventory"
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 100
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("SystemFont_67bv8")
+theme_override_font_sizes/font_size = 40
+text = "I"
+vertical_alignment = 1
